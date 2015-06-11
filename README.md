@@ -7,6 +7,8 @@ There are three branches for which you should concern yourself with:
 
 ## Choosing a branch
 
+[![Join the chat at https://gitter.im/coderplay/cassandra-bench](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/coderplay/cassandra-bench?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 The goal is that projects will be able to "git merge build/branch" when changes are needed to be pushed out.  If you take the wrong branch and consequently heavily modify the files, the merge will be a pain. The other advantage of using an appropriate branch is to provide a level of consistency between the projects. The _master_ branch is best for new projects who want something working out of the gate, but after that you'd migrate to merging from the multi-project so that you don't get bad merges from the same java files. The _multi-project_ branch is for projects which have multiple modules that will be published together, e.g. client, common and server modules. Gradle is very good at building multiple projects, but it does require slightly different syntax and isolation from the rootProject, hence the separate project. The _single-project_ branch is the simplest build which is for a single project. All project use a Maven layout, e.g. src/main/java.
 
 ## Features
