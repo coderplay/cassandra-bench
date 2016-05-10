@@ -3,7 +3,7 @@
 # Consider the effects on 'o.a.c.i.s.LegacySSTableTest' before changing schemas in this file.
 #
 cluster_name: Test Cluster
-memtable_offheap_space_in_mb: 1024
+memtable_offheap_space_in_mb: 4
 memtable_allocation_type: offheap_buffers
 commitlog_sync: periodic
 commitlog_sync_period_in_ms: 10000

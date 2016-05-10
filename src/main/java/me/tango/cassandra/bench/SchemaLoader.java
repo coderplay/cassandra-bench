@@ -56,7 +56,7 @@ public class SchemaLoader {
       MigrationManager.announceNewKeyspace(ksm);
     }
 
-      DatabaseDescriptor.loadSchemas(false);
+//      DatabaseDescriptor.loadSchemas(false);
   }
 
   public void leakDetect() throws InterruptedException {
@@ -68,7 +68,7 @@ public class SchemaLoader {
 
   public static void prepareServer() {
     // Cleanup first
-    // cleanupAndLeaveDirs();
+    cleanupAndLeaveDirs();
 
     CommitLog.instance.allocator.enableReserveSegmentCreation();
 
@@ -113,7 +113,8 @@ public class SchemaLoader {
     Map<String, String> leveledOptions = new HashMap<String, String>();
     leveledOptions.put("sstable_size_in_mb", "64");
     Map<String, String> compressionOptions = new HashMap<String, String>();
-    compressionOptions.put("sstable_compression", "");
+    compressionOptions.put("chunk_length_kb", "4");
+    // compressionOptions.put("crc_check_chance", "0");
 
 
     // Keyspace 1
